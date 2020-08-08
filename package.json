@@ -1,0 +1,24 @@
+{
+  "name": "todo-app",
+  "private": true,
+  "version": "0.0.0",
+  "description": "TODO project in AngularJS",
+  "repository": "https://github.com/faleksic/todojs",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.7.5",
+    "angular-loader": "^1.7.5",
+    "angular-route": "^1.7.5",
+    "html5-boilerplate": "0.0.1"
+  },
+  "devDependencies": {
+    "http-server": "^0.12.3",
+    "cpx": "^1.5.0"
+  },
+  "scripts": {
+    "prestart": "npm install",
+    "postinstall": "npm run copy-libs",
+    "copy-libs": "cpx \"node_modules/{angular,angular-*,html5-boilerplate/dist}/**/*\" app/lib -C",
+    "start": "http-server -a localhost -p 8000 -c-1 ./app"
+  }
+}
