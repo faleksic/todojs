@@ -1,12 +1,12 @@
 "use strict";
 
 // Declare app level module which depends on views, and core components
-angular.module("todoApp", ["ngRoute"]).config([
+angular.module("todoApp", ["ngRoute", "todoApp.todo"]).config([
   "$locationProvider",
   "$routeProvider",
   function ($locationProvider, $routeProvider) {
-    $locationProvider.hashPrefix("!");
+    $locationProvider.hashPrefix("");
 
-    //$routeProvider.otherwise({redirectTo: '/view1'});
+    $routeProvider.otherwise({ redirectTo: "/" });
   },
 ]);
